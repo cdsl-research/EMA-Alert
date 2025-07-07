@@ -1,0 +1,21 @@
+es_host: ls-master.a910.tak-cslab.org
+es_port: 30092
+index: syslog-*
+name: Dynamic Threshold for Warning Logs
+type: frequency
+num_events: 340
+timeframe:
+  minutes: 60
+filter:
+- term:
+    log.syslog.severity.name.keyword: Warning
+- term:
+    host.hostname.keyword: lily
+alert:
+- slack
+slack_webhook_url: https://hooks.slack.com/services/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
+slack_username_override: ElastAlert
+slack_title: ⚠️ Dynamic Threshold Exceeded
+slack_text: '*{0}* exceeded the dynamic log threshold in the last hour.'
+alert_text_args:
+- host.hostname
