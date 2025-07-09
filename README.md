@@ -226,7 +226,7 @@ log.txt
 - Elastalert logs  
 ![image](https://github.com/user-attachments/assets/7c6d477d-7a1d-443a-9503-d08b7bc37c77)
 
-- Slack Alert Message
+- Slack Alert Message   
 ![image](https://github.com/user-attachments/assets/6c96d0b8-6193-4fc6-a203-4b61df0a3be0)   
 
 ## Conclusion
