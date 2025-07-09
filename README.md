@@ -223,7 +223,7 @@ ema.txt
 log.txt  
 ![image](https://github.com/user-attachments/assets/788aa900-8de2-4df5-8700-22fc23f45f4d)  
 
-Elastalert logs  
+- Elastalert logs  
 ![image](https://github.com/user-attachments/assets/7c6d477d-7a1d-443a-9503-d08b7bc37c77)  
 
 
