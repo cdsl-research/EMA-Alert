@@ -158,9 +158,74 @@ Example:
 
 This helps the system calculate future EMA values by using the latest one.
 
-## example of execution
+## Example of execution
+### Cronjob Execution
+First of all, set up a cronjob to execute ema.py hourly, so that the threshold will change by the hour.
+```
+(elast2) c0a22173@elast:~/elastalert2/ema$ crontab -e
+crontab: installing new crontab
+(elast2) c0a22173@elast:~/elastalert2/ema$ crontab -l
+0 * * * * /home/c0a22173/elastalert2/ema/ema.py >> /home/c0a22173/elastalert2/ema/cron.log 2>&1
+```
 
-(To be written by the author)
+### Elastalert execution
+Now, set up Elastalert so that it will keep on running eventhough the terminal is closed, so that it can still monitor the logs.
+
+Command to run Elastalert with nohup.
+```
+nohup elastalert --config config.yaml --rule rules1/warning.yaml --verbose --es_debug > elastalert.log 2>&1 &
+```
+
+Command to check the Elastalert logs
+```
+tail -f elastalert.log
+```
+
+Command to check if elastalert is running
+```
+ps aux | grep elastalert
+```
+
+Command to kill Elastalert (ID can be obtained through the previous command)
+```
+kill <ID>
+```
+
+#### Elastalert example Execution
+```
+c0a22173@elast:~/elastalert2$ nohup elastalert --config config.yaml --rule rules1/warning.yaml --verbose --es_debug > elastalert.log 2>&1 &
+[1] 3016
+c0a22173@elast:~/elastalert2$ tail -f elastalert.log
+nohup: ignoring input
+INFO:elastalert:1 rules loaded
+INFO:elastalert:Starting up
+INFO:elastalert:Disabled rules are: []
+INFO:elastalert:Sleeping for 59.99995 seconds
+INFO:elastalert:Ran Dynamic Threshold for Warning Logs from 2025-07-01 01:34 UTC to 2025-07-01 01:35 UTC: 0 query hits (0 already seen), 0 matches, 0 alerts sent
+INFO:elastalert:Dynamic Threshold for Warning Logs range 32
+^C
+c0a22173@elast:~/elastalert2$ ps aux | grep elastalert
+c0a22173    3016  1.6  0.8 228320 66760 pts/0    Sl   01:35   0:00 /home/c0a22173/elast2/bin/python3 /home/c0a22173/elast2/bin/elastalert --config config.yaml --rule rules1/warning.yaml --verbose --es_debug
+c0a22173    3023  0.0  0.0   6544  2304 pts/0    S+   01:35   0:00 grep --color=auto elastalert
+c0a22173@elast:~/elastalert2$ kill 3016
+c0a22173@elast:~/elastalert2$ ps aux | grep elastalert
+c0a22173    3025  0.0  0.0   6544  2304 pts/0    S+   01:36   0:00 grep --color=auto elastalert
+[1]+  Terminated              nohup elastalert --config config.yaml --rule rules1/warning.yaml --verbose --es_debug > elastalert.log 2>&1
+```
+
+### Final Execution
+- ema.py Execution.
+![image](https://github.com/user-attachments/assets/2157061f-fb00-4691-bab1-4662bcf2e012)
+
+- ema.py txt files 
+ema.txt
+![image](https://github.com/user-attachments/assets/59e91bd4-28b6-46f8-8c2d-e63a1a31c3d5)
+log.txt
+![image](https://github.com/user-attachments/assets/788aa900-8de2-4df5-8700-22fc23f45f4d)
+
+Elastalert logs
+![image](https://github.com/user-attachments/assets/7c6d477d-7a1d-443a-9503-d08b7bc37c77)
+
 
 ## Conclusion
 
