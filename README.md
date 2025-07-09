@@ -214,17 +214,17 @@ c0a22173    3025  0.0  0.0   6544  2304 pts/0    S+   01:36   0:00 grep --color=
 ```
 
 ### Final Execution
-- ema.py Execution.
+- ema.py Execution.  
 ![image](https://github.com/user-attachments/assets/2157061f-fb00-4691-bab1-4662bcf2e012)
 
-- ema.py txt files 
-ema.txt
-![image](https://github.com/user-attachments/assets/59e91bd4-28b6-46f8-8c2d-e63a1a31c3d5)
-log.txt
-![image](https://github.com/user-attachments/assets/788aa900-8de2-4df5-8700-22fc23f45f4d)
+- ema.py txt files   
+ema.txt  
+![image](https://github.com/user-attachments/assets/59e91bd4-28b6-46f8-8c2d-e63a1a31c3d5)  
+log.txt  
+![image](https://github.com/user-attachments/assets/788aa900-8de2-4df5-8700-22fc23f45f4d)  
 
-Elastalert logs
-![image](https://github.com/user-attachments/assets/7c6d477d-7a1d-443a-9503-d08b7bc37c77)
+Elastalert logs  
+![image](https://github.com/user-attachments/assets/7c6d477d-7a1d-443a-9503-d08b7bc37c77)  
 
 
 ## Conclusion
