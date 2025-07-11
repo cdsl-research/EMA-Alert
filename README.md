@@ -159,7 +159,7 @@ Example:
 This helps the system calculate future EMA values by using the latest one.
 
 ## Example of execution
-### Cronjob Execution
+### 1. Cronjob Execution
 First of all, set up a cronjob to execute ema.py hourly, so that the threshold will change by the hour.
 ```
 (elast2) c0a22173@elast:~/elastalert2/ema$ crontab -e
@@ -168,7 +168,7 @@ crontab: installing new crontab
 0 * * * * /home/c0a22173/elastalert2/ema/ema.py >> /home/c0a22173/elastalert2/ema/cron.log 2>&1
 ```
 
-### Elastalert execution
+### 2. Elastalert execution
 Now, set up Elastalert so that it will keep on running eventhough the terminal is closed, so that it can still monitor the logs.
 
 Command to run Elastalert with nohup.
