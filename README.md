@@ -161,7 +161,7 @@ This helps the system calculate future EMA values by using the latest one.
 ## Example of execution
 ### 1. Cronjob Execution
 First of all, set up a cronjob to execute ema.py hourly, so that the threshold will change by the hour.
-```
+```terminal
 (elast2) c0a22173@elast:~/elastalert2/ema$ crontab -e
 crontab: installing new crontab
 (elast2) c0a22173@elast:~/elastalert2/ema$ crontab -l
